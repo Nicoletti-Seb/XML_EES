@@ -12,7 +12,8 @@
     "angular-touch": "^1.4.0",
     "angular-xslt": "ng-xslt#~0.2.1",
     "angular-bootstrap": "~0.14.3",
-    "express": "~4.13.3"
+    "express": "~4.13.3",
+    "serve-favicon": "https://github.com/expressjs/serve-favicon.git#~2.3.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
