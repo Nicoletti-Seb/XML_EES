@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('xmlEesApp', [
+  .module('Menu', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -20,8 +20,8 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
+        templateUrl: '../Menu.html',
+        controller: 'MenuCtrl',
         controllerAs: 'main'
       })
       .when('/about', {
