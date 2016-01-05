@@ -1,6 +1,9 @@
 'use strict';
 
 /**
+ 'use strict';
+
+/**
  * @ngdoc overview
  * @name xmlEesApp
  * @description
@@ -9,7 +12,7 @@
  * Main module of the application.
  */
 angular
-  .module('Menu', [
+  .module('xmlEesApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -20,9 +23,14 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: '../Menu.html',
-        controller: 'MenuCtrl',
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl',
         controllerAs: 'main'
+      })
+      .when('/statistics', {
+        templateUrl: 'views/statistics.html',
+        controller: 'StatisticsCtrl',
+        controllerAs: 'statistics'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
