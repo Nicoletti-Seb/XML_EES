@@ -7,11 +7,14 @@
  * # MainCtrl
  * Controller of the xmlEesApp
  */
-angular.module('Menu')
-  .controller('MenuCtrl', function () {
+angular.module('xmlEesApp')
+  .controller('MainCtrl', function () {
     this.awesomeThings = [
-      'Universités'
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
     ];
   });
+
 
 
