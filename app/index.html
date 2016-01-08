@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html>
 <head>
@@ -35,10 +36,9 @@
             <div class="input-group-addon">
               <span class="glyphicon glyphicon-search"></span>
             </div>
-            <input type="text" class="form-control" name="search" id="search" placeholder="Rechercher..." />
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
   <div class="container-fluid maincontent">
@@ -57,27 +57,46 @@
           <div class="col-sm-1 col-xs-12">
             <center><span class="glyphicon glyphicon-stats"></span></center>
           </div>
-          <div class="col-sm-10 hidden-xs">
-            Statistiques
+          <hr />
+          <div class="row">
+            <div class="col-sm-1 col-xs-12">
+              <center><span class="glyphicon glyphicon-stats"></span></center>
+            </div>
+            <div class="col-sm-10 hidden-xs">
+              Statistiques
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-1 col-xs-12">
+              <center><span class="glyphicon glyphicon-user"></span></center>         
+            </div>
+            <div class="col-sm-10 hidden-xs">
+              Qui sommes nous ?
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-1 col-xs-12">
+              <center><span class="glyphicon glyphicon-hand-right"></span></center>           
+            </div>
+            <div class="col-sm-10 hidden-xs">
+              Liens utiles
+            </div>
           </div>
         </div>
-        <hr />
-        <div class="row">
-          <div class="col-sm-1 col-xs-12">
-            <center><span class="glyphicon glyphicon-user"></span></center>         
+
+        <div class="col-xs-9 content" >
+          <div id="map_wrapper" ng-app="xmlEesApp"> 
+            <div my-map="">
+
+            </div>
+          <!-- <div ng-controller="map-ctrl" id="map_canvas" class="mapping" > 
+              {{map}}
+
+            </div> -->
           </div>
-          <div class="col-sm-10 hidden-xs">
-            Qui sommes nous ?
-          </div>
-        </div>
-        <hr />
-        <div class="row">
-          <div class="col-sm-1 col-xs-12">
-            <center><span class="glyphicon glyphicon-hand-right"></span></center>           
-          </div>
-          <div class="col-sm-10 hidden-xs">
-            Liens utiles
-          </div>
+          
         </div>
         <hr />
         <div ng-click="changeView('search')">
@@ -101,10 +120,6 @@
     </div>
   </div>
 </div>
-
-
-
-
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
