@@ -1,6 +1,6 @@
 .menu{
 	background-color: lightblue;
-	padding: 20px 0px;
+	padding: 20px 20px;
 }
 
 .header{
@@ -20,6 +20,7 @@
 
 .maincontent{
 	padding-top: 15px!important;
+	padding-left: 0px !important;
 }
 
 .footer{
