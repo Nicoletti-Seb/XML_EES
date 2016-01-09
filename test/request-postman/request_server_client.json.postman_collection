@@ -1,0 +1,35 @@
+{
+	"id": "3c870ef4-357f-baaf-1fe9-9f7aeb332dc9",
+	"name": "request_server_client",
+	"description": "Représente un lot de test, pour tester les services du server_client.",
+	"order": [
+		"535f01cd-eb06-a112-6264-cb482401f65b"
+	],
+	"folders": [],
+	"timestamp": 1452264294862,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "535f01cd-eb06-a112-6264-cb482401f65b",
+			"headers": "",
+			"url": "http://localhost:3000/getEtabsPositions",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1452271342969,
+			"name": "getEtabsPositions",
+			"description": "Récupére la localisation de tous les établissements",
+			"collectionId": "3c870ef4-357f-baaf-1fe9-9f7aeb332dc9",
+			"responses": [],
+			"rawModeData": ""
+		}
+	]
+}
