@@ -36,3 +36,14 @@ exports.getTutelles = function(callBack) {
 	    }
 	});
 }
+
+// retourne la liste de nom des statut d'etablissement
+exports.getStatuts = function(callBack) {
+	s.query("declare option output:method 'json';<json type='object'>   <types type='array'>{   for $x in distinct-values(//etablissement/statut)  return <_ type='object'>{ <nom type='string'>{string($x)}</nom>}</_>}</types> </json>").execute(function (err, result) {
+	    if (err) {
+	    	callBack(err);
+	    } else {
+	    	callBack(result.result);
+	    }
+	});
+}
