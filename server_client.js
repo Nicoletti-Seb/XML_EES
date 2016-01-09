@@ -1,5 +1,6 @@
 var express = require('express');
 var favicon = require('serve-favicon');
+var database = require('./server_bd');
 var app = express();
 
 
@@ -20,4 +21,11 @@ app.get('/views/:name', function (req, res) {
   res.sendFile("app/views/" + req.params.name, {root: __dirname });
 });
  
+//Service database
+app.post('/getEtabsPositions/', function(req, res){
+	database.getEtablissementPositions( function(result){
+		res.end(result);
+	});
+});
+
 app.listen(3000);
