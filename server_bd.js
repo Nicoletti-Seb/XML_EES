@@ -16,8 +16,19 @@ exports.getEtablissementPositions = function(callBack) {
 }
 
 // retourne la liste de nom des types d'etablissement
-exports.getEtablissementTypes = function(callBack) {
+exports.getTypes = function(callBack) {
 	s.query("declare option output:method 'json';<json type='object'>   <types type='array'>{   for $x in distinct-values(//etablissement/type)  return <_ type='object'>{ <nom type='string'>{string($x)}</nom>}</_>}</types> </json>").execute(function (err, result) {
+	    if (err) {
+	    	callBack(err);
+	    } else {
+	    	callBack(result.result);
+	    }
+	});
+}
+
+// retourne la liste de nom des tutelle d'etablissement
+exports.getTutelles = function(callBack) {
+	s.query("declare option output:method 'json';<json type='object'>   <types type='array'>{   for $x in distinct-values(//etablissement/tutelle)  return <_ type='object'>{ <nom type='string'>{string($x)}</nom>}</_>}</types> </json>").execute(function (err, result) {
 	    if (err) {
 	    	callBack(err);
 	    } else {
