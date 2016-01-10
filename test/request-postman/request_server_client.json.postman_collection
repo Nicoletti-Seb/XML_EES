@@ -5,7 +5,8 @@
 	"order": [
 		"535f01cd-eb06-a112-6264-cb482401f65b",
 		"d43fae94-b5fc-4a4f-ba03-d3bb4f8609d4",
-		"ed86cd78-5ae8-b837-4aa4-1d26feddf8fa"
+		"ed86cd78-5ae8-b837-4aa4-1d26feddf8fa",
+		"f41d0b93-6e53-1cd9-d998-173f72efc317"
 	],
 	"folders": [],
 	"timestamp": 1452264294862,
@@ -68,6 +69,26 @@
 			"description": "Récupére les tutelles",
 			"descriptionFormat": "html",
 			"time": 1452458629902,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f41d0b93-6e53-1cd9-d998-173f72efc317",
+			"headers": "",
+			"url": "http://localhost:3000/getStatuts",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "3c870ef4-357f-baaf-1fe9-9f7aeb332dc9",
+			"data": [],
+			"dataMode": "params",
+			"name": "getStatuts",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452459767917,
 			"version": 2,
 			"responses": [],
 			"tests": "",
