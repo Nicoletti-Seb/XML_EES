@@ -43,4 +43,11 @@ app.post('/getTutelles/', function(req, res){
 	});
 });
 
+// retourne la liste de nom des statuts d'etablissement
+app.post('/getStatuts/', function(req, res){
+	database.getStatuts( function(result){
+		res.end(result);
+	});
+});
+
 app.listen(3000);
