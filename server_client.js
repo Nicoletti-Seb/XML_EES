@@ -36,4 +36,11 @@ app.post('/getTypes/', function(req, res){
 	});
 });
 
+// retourne la liste de nom des tutelles d'etablissement
+app.post('/getTutelles/', function(req, res){
+	database.getTutelles( function(result){
+		res.end(result);
+	});
+});
+
 app.listen(3000);
