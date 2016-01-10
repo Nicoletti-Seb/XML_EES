@@ -57,4 +57,13 @@ app.post('/getAcademies/', function(req, res){
 	});
 });
 
+
+// retourne la liste de nom des Universites
+app.post('/getUniversites/', function(req, res){
+	database.getUniversites( function(result){
+		res.end(result);
+	});
+});
+
+
 app.listen(3000);
