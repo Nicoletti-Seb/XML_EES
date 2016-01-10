@@ -50,4 +50,11 @@ app.post('/getStatuts/', function(req, res){
 	});
 });
 
+// retourne la liste de nom des academies
+app.post('/getAcademies/', function(req, res){
+	database.getAcademies( function(result){
+		res.end(result);
+	});
+});
+
 app.listen(3000);
