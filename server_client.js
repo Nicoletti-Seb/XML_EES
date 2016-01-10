@@ -22,8 +22,16 @@ app.get('/views/:name', function (req, res) {
 });
  
 //Service database
+// retourne la position géographique des etablissements
 app.post('/getEtabsPositions/', function(req, res){
 	database.getEtablissementPositions( function(result){
+		res.end(result);
+	});
+});
+
+// retourne la liste de nom des types d'etablissement
+app.post('/getTypes/', function(req, res){
+	database.getTypes( function(result){
 		res.end(result);
 	});
 });
