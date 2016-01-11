@@ -103,10 +103,14 @@ exports.getNbEtabParType = function(callBack) {
 	});
 }
 
-
-
-
-
-
-
+// retourne le nombre d'etablissement par tutelle
+exports.getNbEtabParType = function(callBack) {
+	s.query("declare option output:method 'json';<json type='object'>  <tutelles type='array'>{    for $e in //etablissement    let $r := $e/tutelle    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </tutelles></json>").execute(function (err, result) {
+			    if (err) {
+	    	callBack(err);
+	    } else {
+	    	callBack(result.result);
+	    }
+	});
+}
 
