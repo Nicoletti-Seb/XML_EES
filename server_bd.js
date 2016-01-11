@@ -69,3 +69,14 @@ exports.getUniversites = function(callBack) {
 	    }
 	});
 }
+
+// retourne la liste de nom des academies
+exports.getNbEtabParRegion = function(callBack) {
+	s.query("declare option output:method 'json';<json type='object'>  <regions type='array'>{    for $e in //etablissement    let $r := $e/region    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </regions></json>").execute(function (err, result) {
+			    if (err) {
+	    	callBack(err);
+	    } else {
+	    	callBack(result.result);
+	    }
+	});
+}
