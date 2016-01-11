@@ -81,8 +81,8 @@ exports.getNbEtabParRegion = function(callBack) {
 	});
 }
 
-// retourne le nombre d'etablissement par type
-exports.getNbEtabParType = function(callBack) {
+// retourne le nombre d'etablissement par statut
+exports.getNbEtabParStatut = function(callBack) {
 	s.query("declare option output:method 'json';<json type='object'>  <statuts type='array'>{    for $e in //etablissement    let $r := $e/statut    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </statuts></json>").execute(function (err, result) {
 			    if (err) {
 	    	callBack(err);
@@ -92,7 +92,16 @@ exports.getNbEtabParType = function(callBack) {
 	});
 }
 
-
+// retourne le nombre d'etablissement par type
+exports.getNbEtabParType = function(callBack) {
+	s.query("declare option output:method 'json';<json type='object'>  <types type='array'>{    for $e in //etablissement    let $r := $e/type    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </types></json>").execute(function (err, result) {
+			    if (err) {
+	    	callBack(err);
+	    } else {
+	    	callBack(result.result);
+	    }
+	});
+}
 
 
 
