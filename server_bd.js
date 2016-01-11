@@ -70,7 +70,7 @@ exports.getUniversites = function(callBack) {
 	});
 }
 
-// retourne la liste de nom des academies
+// retourne le nombre d'etablissement par région
 exports.getNbEtabParRegion = function(callBack) {
 	s.query("declare option output:method 'json';<json type='object'>  <regions type='array'>{    for $e in //etablissement    let $r := $e/region    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </regions></json>").execute(function (err, result) {
 			    if (err) {
@@ -80,3 +80,24 @@ exports.getNbEtabParRegion = function(callBack) {
 	    }
 	});
 }
+
+// retourne le nombre d'etablissement par type
+exports.getNbEtabParType = function(callBack) {
+	s.query("declare option output:method 'json';<json type='object'>  <statuts type='array'>{    for $e in //etablissement    let $r := $e/statut    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </statuts></json>").execute(function (err, result) {
+			    if (err) {
+	    	callBack(err);
+	    } else {
+	    	callBack(result.result);
+	    }
+	});
+}
+
+
+
+
+
+
+
+
+
+
