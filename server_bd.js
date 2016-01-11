@@ -104,7 +104,7 @@ exports.getNbEtabParType = function(callBack) {
 }
 
 // retourne le nombre d'etablissement par tutelle
-exports.getNbEtabParType = function(callBack) {
+exports.getNbEtabParTutelle = function(callBack) {
 	s.query("declare option output:method 'json';<json type='object'>  <tutelles type='array'>{    for $e in //etablissement    let $r := $e/tutelle    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </tutelles></json>").execute(function (err, result) {
 			    if (err) {
 	    	callBack(err);
@@ -114,3 +114,13 @@ exports.getNbEtabParType = function(callBack) {
 	});
 }
 
+// retourne le nombre d'etablissement par academie
+exports.getNbEtabParAcademie = function(callBack) {
+	s.query("declare option output:method 'json';<json type='object'>  <academies type='array'>{    for $e in //etablissement    let $r := $e/academie    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </academies></json>").execute(function (err, result) {
+				    if (err) {
+	    	callBack(err);
+	    } else {
+	    	callBack(result.result);
+	    }
+	});
+}
