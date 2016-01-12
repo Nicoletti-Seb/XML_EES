@@ -82,7 +82,7 @@
 	    
 	    return {
 	        restrict: 'A',
-	        template: '<div id="map_canvas"></div>',
+	        template: '<div id="map_canvas "></div>',
 	        replace: true,
 	        link: link
 	    };
