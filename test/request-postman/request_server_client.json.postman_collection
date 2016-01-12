@@ -11,7 +11,8 @@
 		"c31c9c6e-80f1-7897-3e5b-ce471da92d5e",
 		"4293d25b-576a-c56b-2e06-a0e486a10b71",
 		"e546e8ac-40fb-cddd-f4d6-f096a7cff722",
-		"d9f3232e-edba-0b99-1325-5b177326f763"
+		"d9f3232e-edba-0b99-1325-5b177326f763",
+		"d8d8769c-dab0-3841-2e18-6dca757af4a0"
 	],
 	"folders": [],
 	"timestamp": 1452264294862,
@@ -120,6 +121,26 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"rawModeData": ""
+		},
+		{
+			"id": "d8d8769c-dab0-3841-2e18-6dca757af4a0",
+			"headers": "",
+			"url": "http://localhost:3000/getNbEtabParTutelle",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "3c870ef4-357f-baaf-1fe9-9f7aeb332dc9",
+			"data": [],
+			"dataMode": "params",
+			"name": "getNbEtabParTutelle",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452603907630,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
 		},
 		{
 			"id": "d9f3232e-edba-0b99-1325-5b177326f763",
