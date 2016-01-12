@@ -86,4 +86,11 @@ app.post('/getNbEtabParType/', function(req, res){
 	});
 });
 
+// retourne le nombre d'etablissement par academie
+app.post('/getNbEtabParTutelle/', function(req, res){
+	database.getNbEtabParTutelle( function(result){
+		res.end(result);
+	});
+});
+
 app.listen(3000);
