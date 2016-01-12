@@ -72,5 +72,12 @@ app.post('/getNbEtabParRegion/', function(req, res){
 	});
 });
 
+// retourne le nombre d'etablissement par statut
+app.post('/getNbEtabParStatut/', function(req, res){
+	database.getNbEtabParStatut( function(result){
+		res.end(result);
+	});
+});
+
 
 app.listen(3000);
