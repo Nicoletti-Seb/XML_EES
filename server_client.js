@@ -79,5 +79,11 @@ app.post('/getNbEtabParStatut/', function(req, res){
 	});
 });
 
+// retourne le nombre d'etablissement par type
+app.post('/getNbEtabParType/', function(req, res){
+	database.getNbEtabParType( function(result){
+		res.end(result);
+	});
+});
 
 app.listen(3000);
