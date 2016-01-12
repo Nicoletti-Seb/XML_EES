@@ -15,7 +15,7 @@
 	 	'Karma'
 	 	];
 	 });
-	 angular.module('xmlEesApp',[]).directive('myMap',function ($http) {
+	 angular.module('xmlEesApp',[]).directive('myMap',function () {
 	    // directive link function
 	    var link = function(scope, element, attrs) {
 	        var map, infoWindow;
@@ -24,7 +24,7 @@
 	        // map config
 	        var mapOptions = {
 	            center: new google.maps.LatLng(50, 2),
-	            zoom:6,
+	            zoom: 4,
 	            mapTypeId: google.maps.MapTypeId.ROADMAP,
 	            scrollwheel: false
 	        };
@@ -65,6 +65,7 @@
 	        
 	        // show the map and place some markers
 	        initMap();
+
 
 	        	        $http.post("http://localhost:3000/getEtabsPositions")
 
