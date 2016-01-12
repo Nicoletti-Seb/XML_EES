@@ -12,7 +12,8 @@
 		"4293d25b-576a-c56b-2e06-a0e486a10b71",
 		"e546e8ac-40fb-cddd-f4d6-f096a7cff722",
 		"d9f3232e-edba-0b99-1325-5b177326f763",
-		"d8d8769c-dab0-3841-2e18-6dca757af4a0"
+		"d8d8769c-dab0-3841-2e18-6dca757af4a0",
+		"240cf0cb-0324-73b7-c37f-da67380a0c62"
 	],
 	"folders": [],
 	"timestamp": 1452264294862,
@@ -20,6 +21,26 @@
 	"remoteLink": "",
 	"public": false,
 	"requests": [
+		{
+			"id": "240cf0cb-0324-73b7-c37f-da67380a0c62",
+			"headers": "",
+			"url": "http://localhost:3000/getNbEtabParAcademie",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "3c870ef4-357f-baaf-1fe9-9f7aeb332dc9",
+			"data": [],
+			"dataMode": "params",
+			"name": "getNbEtabParAcademie",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452604095472,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
 		{
 			"id": "278af3bd-7416-2882-13cc-54cd8388cbc4",
 			"headers": "",
