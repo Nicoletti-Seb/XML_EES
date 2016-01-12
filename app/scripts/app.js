@@ -56,7 +56,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).directive('myMap',function () {
+  }).directive('myMap',function ($http) {
       // directive link function
       var link = function(scope, element, attrs) {
           var map, infoWindow;
@@ -106,10 +106,18 @@ angular
           
           // show the map and place some markers
           initMap();
-          
-          setMarker(map, new google.maps.LatLng(51.508515, -0.125487), 'London', 'Just some content');
-          setMarker(map, new google.maps.LatLng(52.370216, 4.895168), 'Amsterdam', 'More content');
-          setMarker(map, new google.maps.LatLng(48.856614, 2.352222), 'Paris', 'Text here');
+          $http.post("http://localhost:3000/getEtabsPositions")
+            .success(function(data){
+              
+              for(var i in data["etabs"] ) {
+                setMarker(map, new google.maps.LatLng(data["etabs"][i].y,
+                  data["etabs"][i].x), data["etabs"][i].nom,data["etabs"][i].adresse,data["etabs"][i].lien);
+
+            }
+            })
+            .error(function(data){
+              alert("ERROR !!!!!");
+            });
       };
       
       return {
