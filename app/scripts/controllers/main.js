@@ -67,7 +67,9 @@
 	        initMap();
 
 	        	        $http.post("http://localhost:3000/getEtabsPositions")
+
 	        	        .success(function(data){
+
 	        		
 	        		for(var i in data["etabs"] ) {
 	        			setMarker(map, new google.maps.LatLng(data["etabs"][i].y,
@@ -78,6 +80,7 @@
 	        	.error(function(data){
 	        		alert("ERROR !!!!!");
 	        	});
+
 
 	        }; 
 
