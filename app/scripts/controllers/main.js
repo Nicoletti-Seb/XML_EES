@@ -34,7 +34,7 @@
 	            if (map === void 0) {
 	                map = new google.maps.Map(element[0], mapOptions);
 	            }
-	        }    
+	        };     
 	        
 	        // place a marker
 	        function setMarker(map, position, title, content) {
@@ -60,14 +60,14 @@
 	                };
 	                infoWindow = new google.maps.InfoWindow(infoWindowOptions);
 	                infoWindow.open(map, marker);
-	            });
-	        }
+	            }); 
+	        }; 
 	        
 	        // show the map and place some markers
 	        initMap();
 
 	        	        $http.post("http://localhost:3000/getEtabsPositions")
-	        	.success(function(data){
+	        	        .success(function(data){
 	        		
 	        		for(var i in data["etabs"] ) {
 	        			setMarker(map, new google.maps.LatLng(data["etabs"][i].y,
@@ -79,11 +79,8 @@
 	        		alert("ERROR !!!!!");
 	        	});
 
-	        
-	       /* setMarker(map, new google.maps.LatLng(51.508515, -0.125487), 'London', 'Just some content');
-	        setMarker(map, new google.maps.LatLng(52.370216, 4.895168), 'Amsterdam', 'More content');
-	        setMarker(map, new google.maps.LatLng(48.856614, 2.352222), 'Paris', 'Text here');*/
-	    };
+	        }; 
+
 	    
 	    return {
 	        restrict: 'A',
@@ -91,4 +88,10 @@
 	        replace: true,
 	        link: link
 	    };
+
+	
+
 	});
+	
+
+

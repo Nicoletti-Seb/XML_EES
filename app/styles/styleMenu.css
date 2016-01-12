@@ -36,3 +36,70 @@
     width: 100%;
     height: 100%;
 }
+.card {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	width: 96%;
+	border: 1px solid #ccc;
+	background-color: #FFF;
+	margin: 10px 10px;
+}
+
+.card img{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.linkcard, .linkcard:hover{
+	text-decoration: none;
+}
+
+.card:hover {
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	margin-top: -3px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.card .badge{
+	position: absolute;
+	color: white;
+	margin: 10px 10px;
+	color: #000!important;
+	background-color: #FFF!important;
+}
+
+.card h3, .card p{
+	padding-left: 10px;
+	padding-right: 10px;
+	color: black!important
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+	.card {
+		width: 47%;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+	.card {
+		width: 30.99%;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+	.card {
+		width: 23.03%;
+	}
+}
+
+.description{
+	text-align: justify;
+}
+
