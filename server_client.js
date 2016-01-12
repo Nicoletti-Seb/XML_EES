@@ -65,5 +65,12 @@ app.post('/getUniversites/', function(req, res){
 	});
 });
 
+// retourne le nombre d'etablissement par région
+app.post('/getNbEtabParRegion/', function(req, res){
+	database.getNbEtabParRegion( function(result){
+		res.end(result);
+	});
+});
+
 
 app.listen(3000);

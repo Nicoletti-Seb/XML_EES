@@ -8,7 +8,8 @@
 		"ed86cd78-5ae8-b837-4aa4-1d26feddf8fa",
 		"f41d0b93-6e53-1cd9-d998-173f72efc317",
 		"278af3bd-7416-2882-13cc-54cd8388cbc4",
-		"c31c9c6e-80f1-7897-3e5b-ce471da92d5e"
+		"c31c9c6e-80f1-7897-3e5b-ce471da92d5e",
+		"4293d25b-576a-c56b-2e06-a0e486a10b71"
 	],
 	"folders": [],
 	"timestamp": 1452264294862,
@@ -35,6 +36,27 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {}
+		},
+		{
+			"id": "4293d25b-576a-c56b-2e06-a0e486a10b71",
+			"headers": "",
+			"url": "http://localhost:3000/getNbEtabParRegion",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "3c870ef4-357f-baaf-1fe9-9f7aeb332dc9",
+			"data": [],
+			"dataMode": "raw",
+			"name": "getNbEtabParRegion",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452603041017,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": ""
 		},
 		{
 			"id": "535f01cd-eb06-a112-6264-cb482401f65b",
