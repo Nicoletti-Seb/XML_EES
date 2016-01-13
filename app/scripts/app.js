@@ -40,8 +40,10 @@ angular
       })
       .when('/statistics', {
         templateUrl: 'views/stats.html',
+
         controller: 'StatisticsCtrl',
         controllerAs: 'statistics'
+
       })
       .when('/search', {
         templateUrl: 'views/search.html',
