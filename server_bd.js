@@ -72,7 +72,7 @@ exports.getUniversites = function(callBack) {
 
 // retourne le nombre d'etablissement par région
 exports.getNbEtabParRegion = function(callBack) {
-	s.query("declare option output:method 'json';<json type='object'>  <regions type='array'>{    for $e in //etablissement    let $r := $e/region    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </regions></json>").execute(function (err, result) {
+	s.query("declare option output:method 'json';<json type='object'> <nbTotal type='string'>{count(//etablissement/region)}</nbTotal> <regions type='array'>{    for $e in //etablissement    let $r := $e/region    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </regions></json>").execute(function (err, result) {
 			    if (err) {
 	    	callBack(err);
 	    } else {
@@ -83,7 +83,7 @@ exports.getNbEtabParRegion = function(callBack) {
 
 // retourne le nombre d'etablissement par statut
 exports.getNbEtabParStatut = function(callBack) {
-	s.query("declare option output:method 'json';<json type='object'>  <statuts type='array'>{    for $e in //etablissement    let $r := $e/statut    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </statuts></json>").execute(function (err, result) {
+	s.query("declare option output:method 'json';<json type='object'> <nbTotal type='string'>{count(//etablissement/statut)}</nbTotal> <statuts type='array'>{    for $e in //etablissement    let $r := $e/statut    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </statuts></json>").execute(function (err, result) {
 			    if (err) {
 	    	callBack(err);
 	    } else {
@@ -94,7 +94,7 @@ exports.getNbEtabParStatut = function(callBack) {
 
 // retourne le nombre d'etablissement par type
 exports.getNbEtabParType = function(callBack) {
-	s.query("declare option output:method 'json';<json type='object'>  <types type='array'>{    for $e in //etablissement    let $r := $e/type    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </types></json>").execute(function (err, result) {
+	s.query("declare option output:method 'json';<json type='object'> <nbTotal type='string'>{count(//etablissement/type)}</nbTotal> <types type='array'>{    for $e in //etablissement    let $r := $e/type    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </types></json>").execute(function (err, result) {
 			    if (err) {
 	    	callBack(err);
 	    } else {
@@ -105,7 +105,7 @@ exports.getNbEtabParType = function(callBack) {
 
 // retourne le nombre d'etablissement par tutelle
 exports.getNbEtabParTutelle = function(callBack) {
-	s.query("declare option output:method 'json';<json type='object'>  <tutelles type='array'>{    for $e in //etablissement    let $r := $e/tutelle    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </tutelles></json>").execute(function (err, result) {
+	s.query("declare option output:method 'json';<json type='object'>  <nbTotal type='string'>{count(//etablissement/tutelle)}</nbTotal> <tutelles type='array'>{    for $e in //etablissement    let $r := $e/tutelle    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </tutelles></json>").execute(function (err, result) {
 			    if (err) {
 	    	callBack(err);
 	    } else {
@@ -116,7 +116,7 @@ exports.getNbEtabParTutelle = function(callBack) {
 
 // retourne le nombre d'etablissement par academie
 exports.getNbEtabParAcademie = function(callBack) {
-	s.query("declare option output:method 'json';<json type='object'>  <academies type='array'>{    for $e in //etablissement    let $r := $e/academie    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </academies></json>").execute(function (err, result) {
+	s.query("declare option output:method 'json';<json type='object'> <nbTotal type='string'>{count(//etablissement/academie)}</nbTotal> <academies type='array'>{    for $e in //etablissement    let $r := $e/academie    group by $r    return       <_ type='object'>        <nom type='string'>  {string($r)} </nom>        <nombre type='string'> {count($e)} </nombre>      </_>  }  </academies></json>").execute(function (err, result) {
 				    if (err) {
 	    	callBack(err);
 	    } else {
