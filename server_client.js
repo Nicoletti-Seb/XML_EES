@@ -21,12 +21,6 @@ app.get(['/', 'index.html'], function (req, res) {
 app.get('/views/:name', function (req, res) {
   res.sendFile("app/views/" + req.params.name, {root: __dirname });
 });
-
-//service PDF 
-//fop/fop.bat -xml fop/test/persons.xml -xsl fop/test/hello.xsl -pdf hello.pdf
-creatorPdf.createPDF();
-
-
  
 //Service database
 // retourne la position géographique des etablissements
@@ -120,5 +114,14 @@ app.post('/getEtabForStat/', function(req, res){
 		res.end(result);
 	});
 });
+
+
+//create PDF
+/*app.post("/createPDF/", function(req, res){
+
+	//creatorPdf.createPDF();
+
+}
+*/
 
 app.listen(3000);
