@@ -103,3 +103,84 @@
 	text-align: justify;
 }
 
+.bar {
+  fill:lightblue; 
+  height: 21px;
+  transition: fill .3s ease;
+  cursor: pointer;
+  font-family: Helvetica, sans-serif;
+}
+.bar text {
+  color: black;
+}
+.bar:hover,
+.bar:focus {
+  fill: black;
+}
+.bar:hover text,
+.bar:focus text {
+  fill:lightblue ;
+}
+.circle {
+  fill: #ddd;
+  stroke: $primaryColor;
+  stroke-width: 50;
+  stroke-dasharray: 0 158;
+  transition: stroke-dasharray .3s ease;
+}
+
+#cammenbert{
+  margin: 0 auto;
+  transform: rotate(-90deg);
+  background: #ddd;
+  border-radius: 50%;
+  display: block;
+}
+
+.buttons {
+  margin-bottom: 30px;
+}
+
+button {
+  text-transform: capitalize;
+  font-size: 13px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: none;
+  margin-right: 5px;
+  background-color: transparent;
+  padding: 5px 10px;
+  outline: none;
+  border-radius: 2px;
+  transition: background-color .1s ease, color .2s ease;
+  
+  &:last-of-type {
+    margin-right: 0;
+  }
+  
+  &.active {
+    font-weight: 400;
+    background-color: $primaryColor;
+    color: white;
+  }
+}
+
+figcaption {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+body, html {
+  height: 100%;
+}*/
