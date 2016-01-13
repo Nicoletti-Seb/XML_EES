@@ -116,6 +116,7 @@ app.post('/getEtabForStat/', function(req, res){
 });
 
 
+
 //create PDF
 /*app.post("/createPDF/", function(req, res){
 
@@ -123,5 +124,19 @@ app.post('/getEtabForStat/', function(req, res){
 
 }
 */
+
+// retourne les stats sous forme XML
+app.post('/getStatisticForPdf/', function(req, res){
+	database.getStatisticForPdf( function(result){
+		res.end(result);
+	});
+});
+
+// retourne les nom, type, statut, tutelle, universite, academie, region, departement, lien des etablissement
+app.post('/getEtabForStat/', function(req, res){
+	database.getEtabForStat( function(result){
+		res.end(result);
+	});
+});
 
 app.listen(3000);
