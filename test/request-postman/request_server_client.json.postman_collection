@@ -13,7 +13,9 @@
 		"e546e8ac-40fb-cddd-f4d6-f096a7cff722",
 		"d9f3232e-edba-0b99-1325-5b177326f763",
 		"d8d8769c-dab0-3841-2e18-6dca757af4a0",
-		"240cf0cb-0324-73b7-c37f-da67380a0c62"
+		"240cf0cb-0324-73b7-c37f-da67380a0c62",
+		"3b0d3085-4765-58bf-6fb6-dc9e1e9fdf04",
+		"77b0cea7-96af-d20c-b29c-a0d170f199cc"
 	],
 	"folders": [],
 	"timestamp": 1452264294862,
@@ -62,6 +64,26 @@
 			"helperAttributes": {}
 		},
 		{
+			"id": "3b0d3085-4765-58bf-6fb6-dc9e1e9fdf04",
+			"headers": "",
+			"url": "http://localhost:3000/getStatisticForPdf",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "3c870ef4-357f-baaf-1fe9-9f7aeb332dc9",
+			"data": [],
+			"dataMode": "params",
+			"name": "getStatisticForPdf",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452726897678,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
 			"id": "4293d25b-576a-c56b-2e06-a0e486a10b71",
 			"headers": "",
 			"url": "http://localhost:3000/getNbEtabParRegion",
@@ -101,6 +123,26 @@
 			"collectionId": "3c870ef4-357f-baaf-1fe9-9f7aeb332dc9",
 			"responses": [],
 			"rawModeData": ""
+		},
+		{
+			"id": "77b0cea7-96af-d20c-b29c-a0d170f199cc",
+			"headers": "",
+			"url": "http://localhost:3000/getEtabForStat",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "3c870ef4-357f-baaf-1fe9-9f7aeb332dc9",
+			"data": [],
+			"dataMode": "params",
+			"name": "getEtabForStat",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452726941487,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
 		},
 		{
 			"id": "c31c9c6e-80f1-7897-3e5b-ce471da92d5e",

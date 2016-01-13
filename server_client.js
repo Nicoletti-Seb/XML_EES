@@ -99,4 +99,19 @@ app.post('/getNbEtabParAcademie/', function(req, res){
 		res.end(result);
 	});
 });
+
+// retourne les stats sous forme XML
+app.post('/getStatisticForPdf/', function(req, res){
+	database.getStatisticForPdf( function(result){
+		res.end(result);
+	});
+});
+
+// retourne les nom, type, statut, tutelle, universite, academie, region, departement, lien des etablissement
+app.post('/getEtabForStat/', function(req, res){
+	database.getEtabForStat( function(result){
+		res.end(result);
+	});
+});
+
 app.listen(3000);
