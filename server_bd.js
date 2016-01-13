@@ -135,3 +135,14 @@ exports.getStatisticForPdf = function(callBack) {
 	    }
 	});
 }
+
+// retourne les nom, type, statut, tutelle, universite, academie, region, departement, lien des etablissement
+exports.getEtabForStat = function(callBack) {
+	s.query("declare option output:method 'json';<json type='object'><etablissements type='array'>{    for $e in //etablissement    return <_ type='object'>        <nom type='string'>  {string($e/nom)} </nom><typeEtab type='string'> {string($e/type)} </typeEtab><statut type='string'> {string($e/statut)} </statut><tutelle type='string'> {string($e/tutelle)} </tutelle><universite type='string'> {string($e/universite)} </universite><academie type='string'> {string($e/academie)} </academie><region type='string'> {string($e/region)} </region><departement type='string'> {string($e/departement)} </departement><lien type='string'> {string($e/lien)} </lien></_>  }  </etablissements></json>").execute(function (err, result) {
+	    if (err) {
+	    	callBack(err);
+	    } else {
+	    	callBack(result.result);
+	    }
+	});
+}
