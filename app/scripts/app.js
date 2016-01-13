@@ -39,9 +39,9 @@ angular
         controllerAs: 'main'
       })
       .when('/statistics', {
-        templateUrl: 'views/statistics.html',
-        controller: 'StatisticsCtrl',
-        controllerAs: 'statistics'
+        templateUrl: 'views/stats.html',
+        controller: 'chart',
+        // controllerAs: 'chart'
       })
       .when('/search', {
         templateUrl: 'views/search.html',
@@ -51,7 +51,7 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
+        // controllerAs: 'about'
       })
       .otherwise({
         redirectTo: '/'
