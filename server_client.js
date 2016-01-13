@@ -1,6 +1,7 @@
 var express = require('express');
 var favicon = require('serve-favicon');
 var database = require('./server_bd');
+var creatorPdf = require('./creator_pdf');
 var app = express();
 
 
@@ -20,6 +21,12 @@ app.get(['/', 'index.html'], function (req, res) {
 app.get('/views/:name', function (req, res) {
   res.sendFile("app/views/" + req.params.name, {root: __dirname });
 });
+
+//service PDF 
+//fop/fop.bat -xml fop/test/persons.xml -xsl fop/test/hello.xsl -pdf hello.pdf
+creatorPdf.createPDF();
+
+
  
 //Service database
 // retourne la position géographique des etablissements
