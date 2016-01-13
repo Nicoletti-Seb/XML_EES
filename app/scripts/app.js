@@ -40,8 +40,8 @@ angular
       })
       .when('/statistics', {
         templateUrl: 'views/stats.html',
-        controller: 'chart',
-        // controllerAs: 'chart'
+        controller: 'StatisticsCtrl',
+        controllerAs: 'statistics'
       })
       .when('/search', {
         templateUrl: 'views/search.html',
