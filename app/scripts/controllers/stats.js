@@ -2,19 +2,22 @@
 
   /**
    * @ngdoc function
-   * @name xmlEesApp.controller:MainCtrl
+   * @name xmlEesApp.controller:StatisticsCtrl
    * @description
-   * # MainCtrl
+   * # StatisticsCtrl
    * Controller of the xmlEesApp
    */
    angular.module('xmlEesApp',[])
-   .controller('StatisticsCtrl', function () {
-    this.awesomeThings = [
-    'HTML5 Boilerplate',
-    'AngularJS',
-    'Karma'
+  .controller('StatisticsCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
     ];
-   });
+
+    
+
+  }]);
 
    
 var total = 158,
