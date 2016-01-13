@@ -124,3 +124,14 @@ exports.getNbEtabParAcademie = function(callBack) {
 	    }
 	});
 }
+
+// retourne les stats sous forme XML
+exports.getStatisticForPdf = function(callBack) {
+	s.query("<data><nbTotal>{count(//etablissement)}</nbTotal><regions>{for $e in //etablissement let $region := $e/region group by $region return <region><name>{$region}</name> <nombre>{count($e)}</nombre></region> }</regions><statuts>{for $e in //etablissement let $statut := $e/region group by $statut return <statut><name>{$statut}</name> <nombre>{count($e)}</nombre></statut> }</statuts><types>{for $e in //etablissement let $type := $e/type group by $type return <type><name>{$type}</name> <nombre>{count($e)}</nombre></type> }</types><tutelles>{for $e in //etablissement let $tutelle := $e/tutelle group by $tutelle return <tutelle><name>{$tutelle}</name> <nombre>{count($e)}</nombre></tutelle> }</tutelles><academies>{for $e in //etablissement let $academie := $e/academie group by $academie return <academie><name>{$academie}</name> <nombre>{count($e)}</nombre></academie> }</academies></data>").execute(function (err, result) {
+				    if (err) {
+	    	callBack(err);
+	    } else {
+	    	callBack(result.result);
+	    }
+	});
+}
