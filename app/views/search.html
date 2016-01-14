@@ -12,7 +12,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2">Type</label>
 				<div class="col-sm-10">
-					<select id="typeSelect" ng-model="data.type">
+					<select id="typeSelect" ng-model="data.type" ng-change="filters.typeEtab = data.type" >
 					  <option ng-repeat="type in types" >{{type.nom}}</option>
 					</select>
 				</div>
@@ -22,7 +22,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2">Tutelle</label>
 				<div class="col-sm-10">
-					<select id="typeSelect" ng-model="data.tutelle">
+					<select id="typeSelect" ng-model="data.tutelle" ng-change="filters.tutelle = data.tutelle">
 					  <option ng-repeat="tutelle in tutelles" >{{tutelle.nom}}</option>
 					</select>
 				</div>
@@ -31,7 +31,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2">Statut</label>
 				<div class="col-sm-10">
-					<select id="typeSelect" ng-model="data.statut">
+					<select id="typeSelect" ng-model="data.statut" ng-change="filters.statut = data.statut">
 					  <option ng-repeat="statut in statuts" >{{statut.nom}}</option>
 					</select>
 				</div>
@@ -41,7 +41,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2">Académie</label>
 				<div class="col-sm-10">
-					<select id="typeSelect" ng-model="data.academie">
+					<select id="typeSelect" ng-model="data.academie" ng-change="filters.academie = data.academie">
 					  <option ng-repeat="academie in academies" >{{academie.nom}}</option>
 					</select>
 				</div>
@@ -51,7 +51,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2">Université</label>
 				<div class="col-sm-10">
-					<select id="typeSelect" ng-model="data.universite">
+					<select id="typeSelect" ng-model="data.universite" ng-change="filters.universite = data.universite">
 				  		<option ng-repeat="universite in universites" >{{universite.nom}}</option>
 					</select>
 				</div>
@@ -60,10 +60,28 @@
 
 
 			<div class="col-sm-8">
-		      <input type="text" class="form-control" placeholder="Nom de l'établissement">
+		      <input type="text" class="form-control" placeholder="Nom de l'établissement" ng-model="searchNom" />
 		    </div>
-		    <button class="btn btn-default col-sm-2">Rechercher</button>
 
 		</form>
 	</div>
 </div>
+
+<table class="table table-hover">
+  <tr>
+  	<td><b>Nom</b></td>
+    <td><b>Type</b></td>
+    <td><b>Statut</b></td>
+    <td><b>Tutelle</b></td>
+    <td><b>Université</b></td>
+    <td><b>Académie</b></td>
+   </tr>
+  <tr ng-repeat="etab in etabs  | filter:filters | filter:searchNom" ng-click="openLink( etab.lien )">
+    <td>{{ etab.nom }}</td>
+    <td>{{ etab.typeEtab }}</td>
+    <td>{{ etab.statut }}</td>
+    <td>{{ etab.tutelle }}</td>
+    <td>{{ etab.universite }}</td>
+    <td>{{ etab.academie }}</td>
+  </tr>
+</table>

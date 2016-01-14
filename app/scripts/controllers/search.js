@@ -8,7 +8,7 @@
  * Controller of the xmlEesApp
  */
 angular.module('xmlEesApp')
-  .controller('SearchCtrl', ['$scope', '$http', function ($scope, $http) {
+  .controller('SearchCtrl', ['$scope', '$http', '$window', function ($scope, $http, $window) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -22,6 +22,11 @@ angular.module('xmlEesApp')
     	academie:null,
     	universite:null
    };
+
+   $scope.index = 0;
+   $scope.numberLimite = 30;
+   $scope.etabToDisplay = new Array($scope.numberLimite);
+   $scope.filters = {};
 
 
     $http.post("http://localhost:3000/getTypes").success(function(data) {
@@ -44,8 +49,15 @@ angular.module('xmlEesApp')
     $http.post("http://localhost:3000/getUniversites").success(function(data) {
           $scope.universites = data["types"];
         });
+
+    $http.post("http://localhost:3000/getEtabForStat").success(function(data) {
+          $scope.etabs = data["etablissements"];
+        });
     
 
-
+    $scope.openLink = function(link) {
+      alert("coucou");
+      $window.open(link);
+    };
 
   }]);
