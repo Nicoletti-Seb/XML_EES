@@ -56,7 +56,6 @@ angular.module('xmlEesApp')
     
 
     $scope.openLink = function(link) {
-      alert("coucou");
       $window.open(link);
     };
 

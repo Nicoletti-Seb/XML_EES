@@ -44,43 +44,28 @@
   <div class="container-fluid maincontent">
     <div class="row">
       <div class="col-xs-3 menu">
-        <div class="row">
+        <div ng-click="changeView('/')" class="row selectMenu">
           <div class="col-sm-1 col-xs-12">
             <center><span class="glyphicon glyphicon-education"></span></center>            
           </div>
           <div class="col-sm-10 hidden-xs">
-            Universités
+            Home
           </div>
         </div>
         <hr />
-        <div class="row">
+        <div ng-click="changeView('statistics')" class="row selectMenu">
           <div class="col-sm-1 col-xs-12">
             <center><span class="glyphicon glyphicon-stats"></span></center>
           </div>
-          <div ng-click="changeView('statistics')" class="col-sm-10 hidden-xs">
+          <div class="col-sm-10 hidden-xs">
             Statistiques
           </div>
         </div>
         <hr />
-        <div class="row">
-          <div class="col-sm-1 col-xs-12">
-            <center><span class="glyphicon glyphicon-user"></span></center>         
-          </div>
-          <div class="col-sm-10 hidden-xs">
-            Qui sommes nous ?
-          </div>
-        </div>
-        <hr />
-        <div class="row">
+        <div ng-click="changeView('search')" class="row selectMenu">
           <div class="col-sm-1 col-xs-12">
             <center><span class="glyphicon glyphicon-hand-right"></span></center>           
           </div>
-          <div class="col-sm-10 hidden-xs">
-            Liens utiles
-          </div>
-        </div>
-        <hr />
-        <div ng-click="changeView('search')">
           <div class="col-sm-10 hidden-xs">
             Rechercher
           </div>
