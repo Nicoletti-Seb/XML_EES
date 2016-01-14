@@ -16,17 +16,15 @@ angular.module('xmlEesApp')
     ];
 
     $scope.data = {
-    	type:null,
+    	typeEtab:null,
     	tutelle:null,
     	statut:null,
     	academie:null,
-    	universite:null
+    	universite:null,
+      nom:""
    };
 
-   $scope.index = 0;
-   $scope.numberLimite = 30;
-   $scope.etabToDisplay = new Array($scope.numberLimite);
-   $scope.filters = {};
+   $scope.etabs = {};
 
 
     $http.post("http://localhost:3000/getTypes").success(function(data) {
@@ -49,14 +47,16 @@ angular.module('xmlEesApp')
     $http.post("http://localhost:3000/getUniversites").success(function(data) {
           $scope.universites = data["types"];
         });
-
-    $http.post("http://localhost:3000/getEtabForStat").success(function(data) {
-          $scope.etabs = data["etablissements"];
-        });
     
 
     $scope.openLink = function(link) {
       $window.open(link);
     };
+
+    $scope.rechercher = function(){
+      $http.post("http://localhost:3000/recherche", $scope.data).success(function(data) {
+          $scope.etabs = data;
+        });
+    }
 
   }]);

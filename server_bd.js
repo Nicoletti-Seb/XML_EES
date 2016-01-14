@@ -152,26 +152,26 @@ exports.recherche = function(nom, typeEtab, statut, tutelle, academie, universit
 	
 	var request = "declare option output:method 'json';<json type='object'><etablissements type='array'>{    for $e in //etablissement";
 
-	if(nom != "") {
-		request += "where contains($e/nom, \"" + nom + "\")";
+	if(nom != "" && nom != undefined ) {
+		request += " where contains($e/nom, '" + nom + "' )";
 	}
-	if(typeEtab != "") {
-		request += "where $e/type = \"" + typeEtab + "\")";
+	if(typeEtab != "" && typeEtab != undefined) {
+		request += " where ($e/type = '" + typeEtab + "')";
 	}
-	if(statut != "") {
-		request += "where $e/statut = \"" + statut + "\")";
+	if(statut != "" && statut != undefined) {
+		request += " where ($e/statut = '" + statut + "')";
 	}
-	if(tutelle != "") {
-		request += "where $e/tutelle = \"" + tutelle + "\")";
+	if(tutelle != "" && tutelle != undefined) {
+		request += " where ($e/tutelle = '" + tutelle + "')";
 	}
-	if(academie != "") {
-		request += "where $e/academie = \"" + academie + "\")";
+	if(academie != "" && academie != undefined) {
+		request += " where ($e/academie = '" + academie + "')";
 	}
-	if(universite != "") {
-		request += "where $e/universite = \"" + universite + "\")";
+	if(universite != "" && universite != undefined) {
+		request += " where ($e/universite = '" + universite + "')";
 	}
 
-	request += "return <_ type='object'>        <nom type='string'>  {string($e/nom)} </nom><typeEtab type='string'> {string($e/type)} </typeEtab><statut type='string'> {string($e/statut)} </statut><tutelle type='string'> {string($e/tutelle)} </tutelle><universite type='string'> {string($e/universite)} </universite><academie type='string'> {string($e/academie)} </academie><region type='string'> {string($e/region)} </region><departement type='string'> {string($e/departement)} </departement><lien type='string'> {string($e/lien)} </lien></_>  }  </etablissements></json>";
+	request += " return <_ type='object'>        <nom type='string'>  {string($e/nom)} </nom><typeEtab type='string'> {string($e/type)} </typeEtab><statut type='string'> {string($e/statut)} </statut><tutelle type='string'> {string($e/tutelle)} </tutelle><universite type='string'> {string($e/universite)} </universite><academie type='string'> {string($e/academie)} </academie><region type='string'> {string($e/region)} </region><departement type='string'> {string($e/departement)} </departement><lien type='string'> {string($e/lien)} </lien></_>  }  </etablissements></json>";
 
 	s.query(request).execute(function (err, result) {
 	    if (err) {

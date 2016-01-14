@@ -12,7 +12,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2">Type</label>
 				<div class="col-sm-10">
-					<select id="typeSelect" ng-model="data.type" ng-change="filters.typeEtab = data.type" >
+					<select id="typeSelect" ng-model="data.type" ng-change="filters.typeEtab = data.typeEtab" >
 					  <option ng-repeat="type in types" >{{type.nom}}</option>
 					</select>
 				</div>
@@ -60,8 +60,10 @@
 
 
 			<div class="col-sm-8">
-		      <input type="text" class="form-control" placeholder="Nom de l'établissement" ng-model="searchNom" />
+		      <input type="text" class="form-control" placeholder="Nom de l'établissement" ng-model="data.nom" />
 		    </div>
+
+		    <button class="btn-default" ng-click="rechercher()" >Rechercher</button>
 
 		</form>
 	</div>
@@ -76,7 +78,7 @@
     <td><b>Université</b></td>
     <td><b>Académie</b></td>
    </tr>
-  <tr ng-repeat="etab in etabs  | filter:filters | filter:searchNom" ng-click="openLink( etab.lien )">
+  <tr ng-repeat="etab in etabs.etablissements" ng-click="openLink( etab.lien )">
     <td>{{ etab.nom }}</td>
     <td>{{ etab.typeEtab }}</td>
     <td>{{ etab.statut }}</td>

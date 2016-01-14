@@ -1,10 +1,13 @@
 var express = require('express');
 var favicon = require('serve-favicon');
+var bodyParser = require("body-parser");
 var database = require('./server_bd');
 var creatorPdf = require('./creator_pdf');
 var app = express();
 
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //Static files
 app.use("/bower_components", express.static(__dirname + '/bower_components'));
@@ -138,5 +141,22 @@ app.post('/getEtabForStat/', function(req, res){
 		res.end(result);
 	});
 });
+
+
+app.post('/recherche/', function(req, res){
+	var nom = req.body.nom;
+	var typeEtab = req.body.typeEtab;
+	var statut = req.body.statut;
+	var tutelle = req.body.tutelle;
+	var academie = req.body.academie;
+	var universite = req.body.universite;
+
+	console.log(nom);
+
+	database.recherche( nom, typeEtab, statut, tutelle, academie, universite, function(result){
+		res.end(result);
+	});
+});
+
 
 app.listen(3000);
